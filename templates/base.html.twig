@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
          {% block title %}My todo Tasks{% endblock %}
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Tangerine">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -14,15 +15,17 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
        
-
+        <link rel="stylesheet" href="{{ asset('css/base.css')}}">
+ 
         {% block stylesheets %}
-           
+          
         {% endblock %}
-
+        
         
     </head>
     <body>
         {% block body %}
+        
         {% endblock %}
 
         {% block javascripts %}
