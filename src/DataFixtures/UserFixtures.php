@@ -2,38 +2,28 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Task;
-//use Doctrine\Common\Collections\ArrayCollection;
-use App\Entity\Interfaces\IRole;
 use App\Entity\User;
-use DateTime;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 
-class UserFixture extends Fixture implements IRole
+class UserFixtures extends Fixture
 {
-    private $userPasswordHasher;
-    public function __construct(UserPasswordHasherInterface $userPasswordHasher)
-    {
-        $this->userPasswordHasher = $userPasswordHasher;
-    }
-
     public function load(ObjectManager $manager): void
     {
         $user = new User();
-        $user->setLastName("De Funès");
+        $user->setLastname("De Funes");
         $user->setName("Louis");
         $user->setEmail("louisdefufu@youhou.fr");
-        $user->setPassword(
+        // $user->addRole(self::ROLE_ADMIN);
+        /*$user->setPassword(
             $this->userPasswordHasher->hashPassword(
                 $user,
                 "hibernatus"
             )
-        );
-        $user->setPassword("hibernatus");
-        $user->setCreatedAt(new DateTime("now"));
+        );*/
+
+        $user->setPassword('test');
+
         $manager->persist($user);
 
         // $task = new Task();
@@ -41,7 +31,6 @@ class UserFixture extends Fixture implements IRole
         // $manager->persist($task);
 
         //$collection = new ArrayCollection();
-
         $manager->flush();
     }
 }

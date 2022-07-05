@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -47,6 +48,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->event = new ArrayCollection();
         $this->task = new ArrayCollection();
+
+        $this->createdAt = new DateTime();
     }
 
     public function getId(): ?int
@@ -165,13 +168,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getCreatedAt(): ?\DateTimeInterface
     {
         return $this->createdAt;
-    }
-
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
     }
 
     /**
