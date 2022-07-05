@@ -38,10 +38,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime')]
     private $createdAt;
 
-    #[ORM\ManyToMany(targetEntity: event::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: Event::class, inversedBy: 'users')]
     private $event;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: task::class)]
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Task::class)]
     private $task;
 
     public function __construct()
