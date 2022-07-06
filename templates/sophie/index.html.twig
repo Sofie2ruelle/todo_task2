@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ ('css/homestyle.css')}}">
+<link rel="stylesheet" href="{{ ('css/home/homestyle.css')}}">
 {% endblock %}
 
 {% block body %}
@@ -10,7 +10,7 @@
 			<div class="max-w-md w-full space-y-8">
 				<div>
 
-					<img class="img-fluid" src="/images/todo-img1.jpg" alt="Workflow">
+					<img class="img-fluid" "float-center" src="/images/todo-img1.jpg" alt="Workflow">
 					<h1 class="mt-6 text-center font-extrabold">Bienvenue sur Todo Tasks</h1>
 					<h3 class="mt-6 text-center text-2xl font-extrabold">Connectez-vous pour commencer</h3>
 			
@@ -37,14 +37,14 @@
 						</div>
 
 						<div class="text-sm">
-							<a href="{{ path('app_forgot_password_request') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
+							<a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
 								Mot de passe oublié ?
 							</a>
 						</div>
 					</div>
 
 					<div>
-						<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent outline outline-offset-2 outline-blue-600 text-sm font-medium rounded-md text-white bg-cyan-800 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+						<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent outline outline-offset-2 outline-blue-600 text-sm font-medium rounded-md text-white bg-cyan-800 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"><a href="{{ path('app_task_index')}}"></a>
 							<span
 								class="absolute left-0 inset-y-0 flex items-center pl-3">
 								<!-- Heroicon name: solid/lock-closed -->

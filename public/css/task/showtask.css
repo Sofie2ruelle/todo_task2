@@ -1,0 +1,24 @@
+html, body{
+    background-image: url(../../images/fond3.jpg);
+    background-size: cover;
+}
+
+.table {
+    width:80%;
+    border:2px solid #2c4749;
+    border-collapse:collapse;
+    padding:6px;
+}
+.table th {
+    border:2px solid #2c4749;
+    padding:6px;
+    background: #36c9b8;
+    color: #313030;
+}
+.table td {
+    border:2px solid #2c4749;
+    text-align:center;
+    padding:6px;
+    background: #ffffff;
+    color: #313030;
+}

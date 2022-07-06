@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Task;
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,6 @@ class TaskType extends AbstractType
             ->add('createdAt')
             ->add('dueTime')
             ->add('done')
-            ->add('user')
         ;
     }
 

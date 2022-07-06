@@ -1,46 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Task{% endblock %}
+{% block title %}Task
+{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/task/showstyle.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/task/showtask.css')}}">
 {% endblock %}
 
 {% block body %}
-    <h1>Task</h1>
+	<div class="title">
+		<h1>Task</h1>
+	</div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ task.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ task.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ task.description }}</td>
-            </tr>
-            <tr>
-                <th>CreatedAt</th>
-                <td>{{ task.createdAt ? task.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>DueTime</th>
-                <td>{{ task.dueTime ? task.dueTime|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Done</th>
-                <td>{{ task.done ? task.done|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<div class="container">
 
-    <a href="{{ path('app_task_index') }}">back to list</a>
+		<table class="table">
 
-    <a href="{{ path('app_task_edit', {'id': task.id}) }}">edit</a>
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titre</th>
+					<th>Description</th>
+					<th>Date création</th>
+					<th>A finir avant</th>
+					<th>Fait</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{{ task.id }}</td>
 
-    {{ include('task/_delete_form.html.twig') }}
+					<td>{{ task.title }}</td>
+
+					<td>{{ task.description }}</td>
+
+					<td>{{ task.createdAt ? task.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+
+					<td>{{ task.dueTime ? task.dueTime|date('Y-m-d H:i:s') : '' }}</td>
+
+					<td>{{ task.done ? task.done|date('Y-m-d H:i:s') : '' }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<a href="{{ path('app_task_index') }}" "hover:bg-blue-700">Retour à la liste</a>
+
+		<a href="{{ path('app_task_edit', {'id': task.id}) }}">Modifier</a>
+		{{ include('task/_delete_form.html.twig') }}
+
+	</div>
+
+
 {% endblock %}

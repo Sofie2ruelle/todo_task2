@@ -19,6 +19,14 @@ class TaskFixtures extends Fixture
         $task->setDueTime(new DateTime('2022-07-10'));
 
         $manager->persist($task);
+    
+        $task = new Task();
+        $task->setTitle("Finir mon site");
+        $task->setDescription("travailler le front, maquettage, debug.. ");
+        $task->setCreatedAt(new DateTime('now'));
+        $task->setDueTime(new DateTime('2022-08-30'));
+
+        $manager->persist($task);
 
         // $task = new User();
 

@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Great+Vibes&family=The+Nautigal&display=swap');
 
 html, body {
-    background: rgb(34, 193, 195);
-    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(44, 46, 26, 1) 100%);
+    background: rgb(136, 196, 197);
     background-size: cover;
     height: 100%;
     width: 100%;

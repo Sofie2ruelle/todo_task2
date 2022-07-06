@@ -9,17 +9,17 @@
 {% block body %}
 
 	<div class="container">
-		<h1>Task index</h1>
+		<h1>Les choses à faire</h1>
 
 		<table class="table">
 			<thead>
 				<tr>
 					<th>Id</th>
-					<th>Title</th>
+					<th>Nom</th>
 					<th>Description</th>
-					<th>CreatedAt</th>
-					<th>DueTime</th>
-					<th>Done</th>
+					<th>Date création</th>
+					<th>A finir avant</th>
+					<th>Fait</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -33,8 +33,8 @@
 						<td>{{ task.dueTime ? task.dueTime|date('Y-m-d H:i:s') : '' }}</td>
 						<td>{{ task.done ? task.done|date('Y-m-d H:i:s') : '' }}</td>
 						<td>
-							<a href="{{ path('app_task_show', {'id': task.id}) }}">show</a>
-							<a href="{{ path('app_task_edit', {'id': task.id}) }}">edit</a>
+							<a href="{{ path('app_task_show', {'id': task.id}) }}">Voir</a>
+							<a href="{{ path('app_task_edit', {'id': task.id}) }}">Modifier</a>
 						</td>
 					</tr>
 				{% else %}
@@ -45,7 +45,7 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('app_task_new') }}">Create new</a>
+		<a href="{{ path('app_task_new') }}">Créer une nouvelle tâche</a>
 	</div>
 
 {% endblock %}
